@@ -1,0 +1,227 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.floating-text {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: float 5s ease-in-out infinite;
+    color: #ff4081;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    z-index: 2;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.container {
+    text-align: center;
+    display: none;
+}
+
+.options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button {
+    background-color: #ff4081;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    display: none;
+    text-align: center;
+}
+
+.heart-loading {
+    font-size: 2rem;
+    color: #ff4081;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bold;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+}
+
+.hearts-container {
+    margin-top: 20px;
+    font-size: 2rem;
+    display: none;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+@keyframes heartPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+#crying-emoji {
+    font-size: 100px;
+    animation: crying 1s infinite;
+}
+
+@keyframes crying {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes intenseCrying {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(5px) rotate(2deg); }
+    50% { transform: translateY(10px) rotate(-2deg); }
+    75% { transform: translateY(5px) rotate(2deg); }
+}
+
+.shake {
+    animation: shakeScreen 0.5s infinite;
+}
+
+@keyframes shakeScreen {
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(2px, 2px); }
+}
+
+.teardrop {
+    width: 15px;
+    height: 15px;
+    background: #00bcd4;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(300px); opacity: 0; }
+}
+
+#crying-emoji.shake-crying {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Romantic message style */
+.romantic-message {
+    font-size: 2rem;
+    text-align: center;
+    color: #FF4081;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Romantic heart container */
+.romantic-heart-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Heart styling */
+.heart {
+    width: 60px;
+    height: 60px;
+    background-color: #FF4081;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: heartPulse 1.5s infinite;
+    transform-origin: center;
+}
+
+/* Smooth heart pulse animation */
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* --- NEW: Jumping "Be patient..." waiting message --- */
+.waiting-message {
+    font-size: 2rem;
+    color: #FF4081; /* Solid pink */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.waiting-message span {
+    display: inline-block;
+    animation: jump 0.6s ease infinite;
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
